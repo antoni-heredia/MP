@@ -36,7 +36,13 @@ int main()
 
   cout << "La longitud de la cadena es: " << longitud << endl;
 
-	return (0);
+  if(Palindromo(cadena))
+    cout << "La cadena es un palindromo" << endl;
+  else
+    cout << "La cadena no es un palindromo" << endl;
+
+
+  return (0);
 }
 
 /*********************************************************************/
