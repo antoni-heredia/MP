@@ -13,12 +13,12 @@ all : $(BIN)/saludo
 
 $(BIN)/saludo : $(OBJ)/saludo.o
 	@echo Generando $(BIN)/saludo...
-	@g++ -o $(BIN)/saludo $(OBJ)/saludo.o 
+	@g++ -o $(BIN)/saludo $(OBJ)/saludo.o
 	@echo ...Generado correctamente
 
 $(OBJ)/saludo.o : $(SRC)/saludo.cpp
 	@echo Generando $(OBJ)/saludo.o...
-	@g++ -c -o $(OBJ)/saludo.o $(SRC)/saludo.cpp	
+	@g++ -c -o $(OBJ)/saludo.o $(SRC)/saludo.cpp
 	@echo ...Generado correctamente
 
 # Esta regla especifia un destino sin lista de dependencia
