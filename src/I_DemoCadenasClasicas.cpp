@@ -56,6 +56,14 @@ int main()
   copiar_cadena(cadena,cadena2);
   cout << "El resultado de copiar la segunda cadena en la primera es: "
   << cadena << endl;
+
+  char cadena3[LONGITUD];
+  cout << "Introduce otra cadena: ";
+  cin.getline(cadena3,LONGITUD);
+
+  encadenar_cadena(cadena,cadena3);
+  cout << "El resultado de encadenar la primera cadena con esta es: "
+  << cadena << endl;
   return (0);
 }
 
