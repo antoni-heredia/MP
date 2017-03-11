@@ -19,9 +19,10 @@ using namespace std;
 
 /*********************************************************************/
 //Nos devuelve la posicion del primer caracter espacio
-int PosicionPrimerEspacio(char *cadena, int utilizados){
+int PosicionPrimerEspacio(char *cadena){
   int pos = 0;
   char caracter = *(cadena);
+  int utilizados = strlen(cadena);
   //Recorremos mientras queden elementos y el caracter sea distinto de
   //espacio
   while(pos<utilizados && caracter != ' ' ){
@@ -43,7 +44,7 @@ int main()
   cin.getline(cadena,LONGITUD);
 
   //Guardamos la posicion donde esta el primer espacio
-  int posicion = PosicionPrimerEspacio(cadena, strlen(cadena));
+  int posicion = PosicionPrimerEspacio(cadena);
 
   //La sobrecarga del operador << nos permite imprimir la cadena a partir de la
   //posicion despues del espacio hasta el final de la cadena clasica

@@ -42,6 +42,20 @@ int main()
     cout << "La cadena no es un palindromo" << endl;
 
 
+  char cadena2[LONGITUD];
+  cout << "Introduce otra cadena: ";
+  cin.getline(cadena2,LONGITUD);
+
+  if(comparar_cadenas(cadena,cadena2)>0)
+    cout << "La primera cadena introducida es mayor" << endl;
+  else if(comparar_cadenas(cadena,cadena2)<0)
+    cout << "La primera cadena introducida es menor" << endl;
+  else
+    cout << "Las dos cadenas son iguales" << endl;
+
+  copiar_cadena(cadena,cadena2);
+  cout << "El resultado de copiar la segunda cadena en la primera es: "
+  << cadena << endl;
   return (0);
 }
 

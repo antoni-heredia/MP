@@ -19,9 +19,10 @@ using namespace std;
 
 /*********************************************************************/
 //Nos devuelve la posicion del primer caracter espacio
-int PosicionPrimerEspacio(char *cadena, int utilizados){
+int PosicionPrimerEspacio(char *cadena){
   int pos = 0;
   char caracter = *(cadena);
+  int utilizados = strlen(cadena);
   //Recorremos mientras queden elementos y el caracter sea distinto de
   //espacio
   while(pos<utilizados && caracter != ' ' ){
@@ -44,7 +45,7 @@ int main()
 
   //Mostramos la posicion donde se encuentra el espacio en la cadena.
   cout << "La posicion del primer espacio en la cadena es: " <<
-  PosicionPrimerEspacio(cadena, strlen(cadena)) << endl;
+  PosicionPrimerEspacio(cadena) << endl;
 
 	return (0);
 }

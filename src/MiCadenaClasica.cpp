@@ -40,3 +40,25 @@ bool Palindromo(char * cadena){
   return palindromo;
 
 }
+
+int comparar_cadenas(char * cadena1, char * cadena2){
+  int long1 = longitud_cadena(cadena1);
+  int long2 = longitud_cadena(cadena2);
+
+  //Por defecto pensamos que son iguales
+  int devuelve = 0;
+
+  if( long1 > long2)
+    devuelve = 1;
+  else if (long1 < long2)
+    devuelve = -1;
+
+  return devuelve;
+}
+
+void copiar_cadena(char * destino, char * origen){
+  int longcad = longitud_cadena(origen);
+  for(int pos = 0; pos < longcad; pos++ ){
+    destino[pos] = *(origen+pos);
+  }
+}
