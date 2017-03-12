@@ -5,11 +5,11 @@
 int longitud_cadena(char *cadena)
 {
   int longitud = 0;
-  char caracter = *(cadena);
+  char * copia = cadena;
   //Recorremos el vector mientras no sea el caracter \0
-  while(caracter != '\0' ){
+  while(*(copia)){
     longitud++;
-    caracter = *(cadena+longitud);
+    copia++;
   }
   return longitud;
 }
@@ -84,43 +84,52 @@ void encadenar_cadena(char * destino, const char * origen){
 
 }
 
+//Esta funcion devuelve una subcadena de la cadena original
 char* extraer_subcadena(char * cadena, int p, int l){
 
-  char * sub_cadena;
+  //Donde se guardara la subcadena
+  const int TAM = 256;
+  char sub_cadena[TAM];
+  char * prt_sub_cadena = sub_cadena;
 
   int longcad = longitud_cadena(cadena);
   int fin = p+l;
 
+  //Si es mas grande que la longitud el final es el final
+  if(fin>longcad)
+    fin=longcad;
 
-  //La subcadena empieza en la posicion 0+p
-  sub_cadena = cadena+p;
+  //Vamos guardando los elementos desde p hasta el final
+  int pos;
+  for(pos = p; pos < fin; pos++){
+    *(prt_sub_cadena+pos-p) = *(cadena+pos);
+  }
 
-  /*
-    Y para indicar el final de la cadena incluimos el \0 en la posicion final
-    Aunque este if no seria tecnicamente necesario ya que si ponemos un \0
-    despues del que hay actualmente no cambiaria nada porque << para en el
-    primero
-  */
-
-  if(fin<longcad)
-    *(sub_cadena+l) = '\0';
+  //Añadimos el \0
+  *(prt_sub_cadena+pos-p) = '\0';
 
   //Devolvemos la cadena extraida
-  return sub_cadena;
+  return prt_sub_cadena;
 }
 
-char* invertir_cadena(char * cadena){
-  char * cad_inver = cadena;
+//Esta funcion invierte una cadena
+char * invertir_cadena(char * cadena){
 
+  //Donde se guardara la cadena invertida
+  const int TAM = 256;
+  char cad_inver[TAM];
+  char * prt_cad_inver = cad_inver;
   int longcad = longitud_cadena(cadena);
 
-  int i = 0;
-/*
-  for(int pos = longcad-1; pos >= 0; pos--)
+  //Recorremos desde el final hasta el principio
+  int pos;
+  for(pos = longcad-1; pos >= 0; pos--)
   {
-    *(cad_inver+i) = *(cadena+pos);
-    i++;
+    *(prt_cad_inver+(longcad-1)-pos) = *(cadena+pos);
   }
-*/
-  return cad_inver;
+
+  //Guardamos el \0 para indicar el final de la cadena clasica
+  *(prt_cad_inver+(longcad-1)-pos) = '\0';
+
+  return prt_cad_inver;
 }

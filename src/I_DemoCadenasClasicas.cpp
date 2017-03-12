@@ -34,8 +34,10 @@ int main()
   int longitud = longitud_cadena(cadena);
 
 
+  //Mostramos la longitud de la cadena
   cout << "La longitud de la cadena es: " << longitud << endl;
 
+  //Mostramos si es un palindrdomo
   if(Palindromo(cadena))
     cout << "La cadena es un palindromo" << endl;
   else
@@ -46,6 +48,7 @@ int main()
   cout << "Introduce otra cadena: ";
   cin.getline(cadena2,LONGITUD);
 
+  //Se compara el tamaño de las cadenas
   if(comparar_cadenas(cadena,cadena2)>0)
     cout << "La primera cadena introducida es mayor" << endl;
   else if(comparar_cadenas(cadena,cadena2)<0)
@@ -53,6 +56,7 @@ int main()
   else
     cout << "Las dos cadenas son iguales" << endl;
 
+  //SE copia una cadena en otra
   copiar_cadena(cadena,cadena2);
   cout << "El resultado de copiar la segunda cadena en la primera es: "
   << cadena << endl;
@@ -61,23 +65,26 @@ int main()
   cout << "Introduce otra cadena: ";
   cin.getline(cadena3,LONGITUD);
 
+  //Se concatena las cadenas
   encadenar_cadena(cadena,cadena3);
   cout << "El resultado de encadenar la primera cadena con esta es: "
   << cadena << endl;
+
 
   int inicio,longcad;
   cout << "Inicio de la extración de la cadena: ";
   cin >> inicio;
   cout << "Longitud de la cadena a extraer: ";
+
+  //Se crea una subcadena con los datos dados
   cin >> longcad;
   char * cadena_extr = extraer_subcadena(cadena,inicio, longcad);
 
   cout << "La cadena reultado es: " << cadena_extr << endl;
 
+  //Se invierte la cadena
   char * cad_inver = invertir_cadena(cadena);
-  cout << cadena << endl;
   cout << "La cadena invertida es: " << cad_inver << endl;
-
   return (0);
 }
 

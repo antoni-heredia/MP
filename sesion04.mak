@@ -1,7 +1,8 @@
 # Fichero: makefile
 # Construye el ejecutable saludo a partir de saludo.o
 # Construrye el objeto saludo.o a partir de saludo.cpp
-HOME = /home/antonio/git/MP
+HOME = .
+
 
 BIN=$(HOME)/bin
 OBJ=$(HOME)/obj
@@ -26,12 +27,12 @@ $(BIN)/I_DemoCadenasClasicas : $(OBJ)/I_DemoCadenasClasicas.o $(OBJ)/MiCadenaCla
 	@g++ -o $(BIN)/I_DemoCadenasClasicas $(OBJ)/I_DemoCadenasClasicas.o $(OBJ)/MiCadenaClasica.o
 	@echo ...Generado correctamente
 
-$(OBJ)/I_DemoCadenasClasicas.o : $(SRC)/I_DemoCadenasClasicas.cpp $(INCLUDE)/adicion.h
+$(OBJ)/I_DemoCadenasClasicas.o : $(SRC)/I_DemoCadenasClasicas.cpp
 	@echo Generando $(OBJ)/I_DemoCadenasClasicas.o...
 	@g++ -c -o $(OBJ)/I_DemoCadenasClasicas.o $(SRC)/I_DemoCadenasClasicas.cpp -I$(INCLUDE)
 	@echo ...Generado correctamente
 
-$(OBJ)/MiCadenaClasica.o : $(SRC)/MiCadenaClasica.cpp $(INCLUDE)/adicion.h
+$(OBJ)/MiCadenaClasica.o : $(SRC)/MiCadenaClasica.cpp 
 	@echo Generando $(OBJ)/MiCadenaClasica.o...
 	@g++ -c -o $(OBJ)/MiCadenaClasica.o $(SRC)/MiCadenaClasica.cpp -I$(INCLUDE)
 	@echo ...Generado correctamente
