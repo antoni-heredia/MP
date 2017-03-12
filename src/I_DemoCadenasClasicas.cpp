@@ -73,6 +73,11 @@ int main()
   char * cadena_extr = extraer_subcadena(cadena,inicio, longcad);
 
   cout << "La cadena reultado es: " << cadena_extr << endl;
+
+  char * cad_inver = invertir_cadena(cadena);
+  cout << cadena << endl;
+  cout << "La cadena invertida es: " << cad_inver << endl;
+
   return (0);
 }
 

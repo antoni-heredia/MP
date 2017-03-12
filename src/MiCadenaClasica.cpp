@@ -108,3 +108,19 @@ char* extraer_subcadena(char * cadena, int p, int l){
   //Devolvemos la cadena extraida
   return sub_cadena;
 }
+
+char* invertir_cadena(char * cadena){
+  char * cad_inver = cadena;
+
+  int longcad = longitud_cadena(cadena);
+
+  int i = 0;
+/*
+  for(int pos = longcad-1; pos >= 0; pos--)
+  {
+    *(cad_inver+i) = *(cadena+pos);
+    i++;
+  }
+*/
+  return cad_inver;
+}
