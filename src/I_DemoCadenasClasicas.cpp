@@ -64,6 +64,15 @@ int main()
   encadenar_cadena(cadena,cadena3);
   cout << "El resultado de encadenar la primera cadena con esta es: "
   << cadena << endl;
+
+  int inicio,longcad;
+  cout << "Inicio de la extración de la cadena: ";
+  cin >> inicio;
+  cout << "Longitud de la cadena a extraer: ";
+  cin >> longcad;
+  char * cadena_extr = extraer_subcadena(cadena,inicio, longcad);
+
+  cout << "La cadena reultado es: " << cadena_extr << endl;
   return (0);
 }
 

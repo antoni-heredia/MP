@@ -83,3 +83,28 @@ void encadenar_cadena(char * destino, const char * origen){
   }
 
 }
+
+char* extraer_subcadena(char * cadena, int p, int l){
+
+  char * sub_cadena;
+
+  int longcad = longitud_cadena(cadena);
+  int fin = p+l;
+
+
+  //La subcadena empieza en la posicion 0+p
+  sub_cadena = cadena+p;
+
+  /*
+    Y para indicar el final de la cadena incluimos el \0 en la posicion final
+    Aunque este if no seria tecnicamente necesario ya que si ponemos un \0
+    despues del que hay actualmente no cambiaria nada porque << para en el
+    primero
+  */
+
+  if(fin<longcad)
+    *(sub_cadena+l) = '\0';
+
+  //Devolvemos la cadena extraida
+  return sub_cadena;
+}
