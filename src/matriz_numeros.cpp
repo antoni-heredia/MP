@@ -66,6 +66,23 @@ public:
 /////////////////////////////////////////////////////////////////////////////
 
 
+/*
+  La funcion devuelve la posicion del mayor elemento de una region del vector
+  -pv primera posicion del vector
+  -izda limite inferior de la zona donde se va a buscar el mayor
+  -dcha limite superior de la zona donde se va a buscar el mayor
+*/
+
+int * PosMayor (int * pv, int izda, int dcha){
+
+  int * mayor = pv+izda;
+  for(int pos  = izda+1; pos < dcha; pos++){
+    if( *(pv+pos) > *(mayor) ){
+      mayor = pv+pos;
+    }
+  }
+  return mayor;
+}
 
 /*
   La funcion rellena un vector con valores aleatorios
@@ -74,13 +91,21 @@ public:
   -min el minino de los numero aleatorios
   -max el maximo de los numeros aleatorios
 */
-
-void RellenaVector (int * v, int util, int min=0, int max=100){
+void RellenaVectorSinOrden (int * v, int util, int min=0, int max=100){
   GeneradorAleatorioEnteros generador (min,max);
   for(int cont = 0; cont < util; cont++)
     *(v+cont) = generador.Siguiente();
+
+}
+
+
+
+
+void RellenaVector (int * v, int util, int min=0, int max=100){
+  RellenaVectorSinOrden (v, util, min, max);
   OrdenaVector(v, util);
 }
+
 
 /*
   La ordena un vector de int

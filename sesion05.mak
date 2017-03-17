@@ -10,12 +10,22 @@ INCLUDE=$(HOME)/include
 LIB=$(HOME)/lib
 SRC=$(HOME)/src
 
-all : $(BIN)/I_MezclaArrays
+all : $(BIN)/I_MezclaArrays $(BIN)/I_PosMayor
 
 
 $(BIN)/I_MezclaArrays : $(OBJ)/I_MezclaArrays.o $(OBJ)/matriz_numeros.o
 	@echo Generando $(BIN)/I_MezclaArrays...
 	@g++ -std=c++11 -o $(BIN)/I_MezclaArrays $(OBJ)/I_MezclaArrays.o $(OBJ)/matriz_numeros.o
+	@echo ...Generado correctamente
+
+$(BIN)/I_PosMayor : $(OBJ)/I_PosMayor.o $(OBJ)/matriz_numeros.o
+	@echo Generando $(BIN)/I_PosMayor...
+	@g++ -std=c++11 -o $(BIN)/I_PosMayor $(OBJ)/I_PosMayor.o $(OBJ)/matriz_numeros.o
+	@echo ...Generado correctamente
+
+$(OBJ)/I_PosMayor.o : $(SRC)/I_PosMayor.cpp
+	@echo Generando $(OBJ)/I_PosMayor.o...
+	@g++ -std=c++11 -c -o $(OBJ)/I_PosMayor.o $(SRC)/I_PosMayor.cpp -I$(INCLUDE)
 	@echo ...Generado correctamente
 
 $(OBJ)/I_MezclaArrays.o : $(SRC)/I_MezclaArrays.cpp

@@ -22,45 +22,47 @@ using namespace std;
 int main(int argc, char * argv[])
 {
   const int TOPE = 100;
-  int v1[TOPE];
-  int v2[TOPE];
-  int min, max;
+  int vector [TOPE];
+  int tope_lleno, ext_inf, ext_sup;
   switch (argc) {
     case 1:
-      min = 0;
-      max = 100;
+      tope_lleno = TOPE;
+      ext_inf = 0;
+      ext_sup = TOPE - 1;
     break;
     case 2:
-      min = 0;
-      max = atoi(argv[1]);
+      tope_lleno = atoi(argv[1]);
+      ext_inf = 0;
+      ext_sup = atoi(argv[1]) - 1;
     break;
 
     case 3:
-      min = atoi(argv[1]);
-      max = atoi(argv[2]);
+      tope_lleno = atoi(argv[1]);
+      ext_inf = 0;
+      ext_sup = atoi(argv[2]);
     break;
 
     case 4:
+      tope_lleno = *(argv[1]);
+      ext_inf = atoi(argv[2]);
+      ext_sup = atoi(argv[3]);
+    break;
+
+    case 5:
       cout << "Numero de argumentos invalidos...." << endl;
       cout << "Saliendo del programa...." << endl;
       return 1;
     break;
   }
-  RellenaVector(v1,TOPE,min,max);
 
+  RellenaVectorSinOrden(vector,tope_lleno,0,50);
   char mensaje[TOPE];
   cout << "Introduzca el mensaje a mostrar: ";
   cin.getline(mensaje,TOPE);
 
-  MuestraVector(mensaje,v1,TOPE,10);
+  MuestraVector(mensaje,vector,tope_lleno,10);
 
-  
-  RellenaVector(v2,TOPE,min,max);
-  MuestraVector(mensaje,v2,TOPE,10);
-
-  int v3[TOPE*2];
-  MezclaVectores(v3,v1,TOPE,v2,TOPE);
-  MuestraVector(mensaje,v3,TOPE*2,10);
+  cout << "El mayor es: " << *(PosMayor(vector,ext_inf,ext_sup));
 
   cout << endl << endl;
 	return (0);
