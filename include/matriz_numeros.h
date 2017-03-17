@@ -24,4 +24,14 @@ void OrdenaVector(int * v, int elementos);
   -n -> Datos por linea a mostrar
 */
 void MuestraVector (char *mensaje, int v[], int util, int n);
+
+/*
+  Mezcla los vector de forma ordenada y los guarda en mezcla
+  -mezcla vector donde se guardan la mezcla de los vectores
+  -v1 vector uno de la mezcla
+  -util_v1 cantidad de elementos de v1
+  -v2 vector dos de la mezcla
+  -util_v2 cantidad de elementos de v2
+*/
+int MezclaVectores (int * mezcla, int * v1, int util_v1, int * v2, int util_v2);
 #endif

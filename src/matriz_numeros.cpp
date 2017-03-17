@@ -102,6 +102,7 @@ void OrdenaVector(int * v, int elementos){
     }
   }
 }
+
 /*
   Muestra los datos que hay en un vector
   -mensaje -> El mensaje que se muestra antes de los datos
@@ -109,6 +110,7 @@ void OrdenaVector(int * v, int elementos){
   -util -> Cantidad de datos que queremos mostrar
   -n -> Datos por linea a mostrar
 */
+
 void MuestraVector (char * mensaje, int * v, int util, int n){
 
   cout << mensaje << endl;
@@ -118,5 +120,36 @@ void MuestraVector (char * mensaje, int * v, int util, int n){
       cout << endl;
     cout << *(v+x) << " ";
   }
+  cout << endl << endl;
+}
 
+/*
+  Mezcla los vector de forma ordenada y los guarda en mezcla
+  -mezcla vector donde se guardan la mezcla de los vectores
+  -v1 vector uno de la mezcla
+  -util_v1 cantidad de elementos de v1
+  -v2 vector dos de la mezcla
+  -util_v2 cantidad de elementos de v2
+*/
+int MezclaVectores (int * mezcla, int * v1, int util_v1, int * v2, int util_v2){
+
+  int fin;
+
+  if(util_v1>util_v2)
+    fin = util_v1;
+  else
+    fin = util_v2;
+  int elemento = 0;
+  for(int pos = 0;pos<fin;pos++){
+    if(pos<util_v1){
+      *(mezcla+elemento) = *(v1+pos);
+      elemento++;
+    }
+
+    if(pos<util_v2){
+      *(mezcla+elemento) = *(v2+pos);
+      elemento++;
+    }
+  }
+  return elemento;
 }

@@ -13,7 +13,6 @@
 /*********************************************************************/
 
 #include <iostream>
-#include <cstring>
 #include "matriz_numeros.h"
 using namespace std;
 
@@ -23,15 +22,24 @@ using namespace std;
 int main()
 {
   const int MAX = 256;
-  int array[MAX];
+  int v1[MAX];
 
-  RellenaVector(array,256,0,100);
+  RellenaVector(v1,MAX,0,100);
 
   char mensaje[MAX];
   cout << "Introduzca el mensaje a mostrar: ";
   cin.getline(mensaje,MAX);
 
-  MuestraVector(mensaje,array,MAX,10);
+  MuestraVector(mensaje,v1,MAX,10);
+
+  int v2[MAX];
+  RellenaVector(v2,MAX,0,100);
+  MuestraVector(mensaje,v2,MAX,10);
+
+  int v3[MAX*2];
+  MezclaVectores(v3,v1,MAX,v2,MAX);
+  MuestraVector(mensaje,v3,MAX*2,10);
+
   cout << endl << endl;
 	return (0);
 }
