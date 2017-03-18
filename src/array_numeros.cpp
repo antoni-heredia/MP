@@ -19,7 +19,7 @@
 
 #include <random>
 #include <chrono>
-#include "matriz_numeros.h"
+#include "array_numeros.h"
 
 using namespace std;
 

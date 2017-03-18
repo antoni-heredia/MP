@@ -13,7 +13,7 @@
 /*********************************************************************/
 
 #include <iostream>
-#include "matriz_numeros.h"
+#include "array_numeros.h"
 using namespace std;
 
 /*********************************************************************/
@@ -62,7 +62,8 @@ int main(int argc, char * argv[])
 
   MuestraVector(mensaje,vector,tope_lleno,10);
 
-  cout << "El mayor es: " << *(PosMayor(vector,ext_inf,ext_sup));
+  cout << "El mayor es entre [ " << ext_inf << ", " << ext_sup 
+       << "] : " << *(PosMayor(vector,ext_inf,ext_sup));
 
   cout << endl << endl;
 	return (0);
