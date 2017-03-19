@@ -16,7 +16,6 @@
 #include<cstdlib>
 #include<cctype>
 #include <iostream>
-
 #include <random>
 #include <chrono>
 #include "array_numeros.h"
@@ -122,7 +121,7 @@ void OrdenaVector(int * v, int elementos){
         cambio = true;
         intercambia = *(v+i);
         *(v+i) = *(v+i-1);
-        *(v+i-1) = intercambia;
+        *(v+i-1) = 0intercambia;
       }
     }
   }
