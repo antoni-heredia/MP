@@ -121,7 +121,7 @@ void OrdenaVector(int * v, int elementos){
         cambio = true;
         intercambia = *(v+i);
         *(v+i) = *(v+i-1);
-        *(v+i-1) = 0intercambia;
+        *(v+i-1) = intercambia;
       }
     }
   }
