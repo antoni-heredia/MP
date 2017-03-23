@@ -17,6 +17,9 @@ using namespace std;
 //Tamaño de bloque
 const int TAM_BLOQUE = 4;
 
+//Tamaño inicial del vector
+const int TAM = 5;
+
 //enum para guardar los tipos de redimension que hacemos
 enum TipoRedimension {DeUnoEnUno,EnBloques,Duplicando};
 
@@ -65,49 +68,34 @@ int * Redimensiona (int * p, TipoRedimension tipo, int & cap){
 int main(int argc, char * argv[])
 {
 
+  if(argc>2){
+    //En caso de que el numero de parametros sea 2 contando con el nombre del
+    //programa
+    cout << "Numero de argumentos invalidos...." << endl;
+    cout << "Saliendo del programa...." << endl;
+    exit(1);
+  }
 
-  //Tamaño inicial del vector
-  const int TAM = 5;
   int cap = TAM;
   int * ptr = new int [cap];
   int argumento;
   //Vemos la cantidad de elementos y segun cual sea realizamos una acciones u
   //otras
-  TipoRedimension tipo;
-  switch (argc) {
-
-    case 1:
-      //Cuando no tiene argumentos
-      tipo = TipoRedimension::DeUnoEnUno;
-    break;
-
-    case 2:
-      argumento = atoi(argv[1]);
-      //En caso de que tenga un argumento dependiendo de su valor cambiara
-      //el tipo de redimension
-      if(argumento == 1)
-        tipo = TipoRedimension::DeUnoEnUno;
-      else if(argumento == 2)
-        tipo = TipoRedimension::EnBloques;
-      else if(argumento == 3)
-        tipo = TipoRedimension::Duplicando;
-      else{
-        //Como el argumento no tiene el valor correcto se sale del programa
-        cout << "El argumento es invalido...." << endl;
-        cout << "Saliendo del programa...." << endl;
-        return 1;
-      }
-    break;
-
-    case 3:
-      //En caso de que el numero de parametros sea 2 contando con el nombre del
-      //programa
-      cout << "Numero de argumentos invalidos...." << endl;
+  TipoRedimension tipo = TipoRedimension::DeUnoEnUno;
+  if(argc==2){
+    argumento = atoi(argv[1]);
+    //En caso de que tenga un argumento dependiendo de su valor cambiara
+    //el tipo de redimension
+    if(argumento == 2)
+      tipo = TipoRedimension::EnBloques;
+    else if(argumento == 3)
+      tipo = TipoRedimension::Duplicando;
+    else{
+      //Como el argumento no tiene el valor correcto se sale del programa
+      cout << "El argumento es invalido...." << endl;
       cout << "Saliendo del programa...." << endl;
-
-      return 1;
-    break;
-
+      exit(1);
+    }
   }
 
   //Variables que usaremos en la lectura de datos
@@ -141,14 +129,14 @@ int main(int argc, char * argv[])
     cin >> frase;
   }
 
-  //Un simple buble for para mostrar los datos leidos
+  //Un simple bucle for para mostrar los datos leidos
   cout << "Los datos leidos son: " << endl;
   for(int x = 0; x < cant_vect; x++)
     cout << *(ptr+x) <<endl;
 
   //Liberamos la memoria reservada en el heap
   delete [] ptr;
-  
+
   cout << endl << endl;
 	return (0);
 }
