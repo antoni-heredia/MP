@@ -10,6 +10,10 @@ const int TAM_BLOQUE = 4;
 //Tamaño inicial del vector
 const int TAM = 5;
 
+//Cantidad de cadenas iniciales que se pueden guardar
+const int CANT_CADENAS = 2;
+
+
 //enum para guardar los tipos de redimension que hacemos
 enum TipoRedimension {DeUnoEnUno,EnBloques,Duplicando};
 
@@ -31,4 +35,10 @@ struct Pareja {
 */
 
 int * Redimensiona (int * p, TipoRedimension tipo, int & cap);
+
+char ** RedimensionaVectorCadenas (char * * p, TipoRedimension tipo, int & cap);
+
+int LongitudCadena(char * cadena);
+
+
 #endif
