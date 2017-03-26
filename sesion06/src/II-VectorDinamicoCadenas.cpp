@@ -30,23 +30,47 @@ int main(int argc, char * argv[])
   char * * cadenas =  new char * [cap];
   string cadena;
 
+  //Leemos hasta el final del fichero
   while (getline (cin, cadena)) {
-    
+
+    //Mientras que haya capacidad no hay por que redimensionar
     if(cant == cap)
       cadenas =
       RedimensionaVectorCadenas(cadenas,TipoRedimension::DeUnoEnUno,cap);
+    //Creamos una cadena donde guardar la linea
     char * cadena_tmp = new  char  [cadena.length()+1];
     int i;
+    //Guardamos los caracteres de la linea en la cadena
     for( i = 0; i < cadena.length();i++)
       cadena_tmp[i] = cadena[i];
-
+    //Añadimos el finalizador de cadena
     cadena_tmp[i] = '\0';
+    //Guardamos la cadena
     cadenas[cant] = cadena_tmp;
-    cout << cadenas[cant] << endl;
     cant++;
 
   }
-  for(int i = 0; i < cant ;i++)
-    cout << cadenas[i] <<endl;
+
+  int lineas_totales = cant;
+  int lineas_no_vacias = 0;
+  int parrafos = 0;
+  bool fin_parrafo = true;
+  for(int linea = 0; linea< lineas_totales; linea++){
+    int longi = LongitudCadena(cadenas[linea]);
+
+    if(longi != 0){
+      lineas_no_vacias++;
+      if(fin_parrafo){
+        parrafos++;
+        fin_parrafo = false;
+      }
+    }else
+      fin_parrafo = true;
+
+  }
+
+  cout << "Las lineas totales han sido: " << lineas_totales << endl;
+  cout << "Las lineas no vacias han sido: " << lineas_no_vacias << endl;
+  cout << "El numero de parrafos ha sido: " << parrafos << endl;
 
 }
