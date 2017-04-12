@@ -284,6 +284,7 @@ Matriz2D TrasponerMatriz(Matriz2D matriz){
   for(int f = 0; f < matriz.fils; f++){
     for(int c = 0; c < matriz.cols; c++)
       traspuesta.datos[c][f] = matriz.datos[f][c];
+    
   }
   return traspuesta;
 }
