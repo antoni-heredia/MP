@@ -32,4 +32,6 @@ PNodo ElementoPosicion(const Lista l, int pos);
 
 void InsertaOrdenadamente (Lista &l, TipoBase v);
 
+void MezclaListas (Lista &l, Lista &l1, Lista &l2);
+
 #endif

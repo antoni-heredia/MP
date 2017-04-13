@@ -164,8 +164,46 @@ void InsertaOrdenadamente (Lista &l, TipoBase v){
     }
 
   }
+  if(!introducido){
+    aniadir = v;
+  }
   aux_fin->sig = new Nodo;
   aux_fin = aux_fin->sig;
   aux_fin->valor = aniadir;
   aux_fin->sig = 0;
+}
+
+void MezclaListas(Lista &l, Lista &l1, Lista &l2){
+  Lista fin;
+  if(l1->valor < l2->valor){
+    fin = l1;
+    l1 = l1->sig;
+  }else{
+    cout << "es primero no es menor" << endl;
+
+    fin = l2;
+    l2 = l2->sig;
+  }
+  l = fin;
+  while( (l1 != 0) && (l2 != 0) ){
+    if(l1->valor < l2->valor){
+      fin->sig = l1;
+      l1 = l1->sig;
+    }else{
+      fin->sig = l2;
+      l2 = l2->sig;
+    }
+    fin = fin->sig;
+  }
+
+  while( l1 != 0 ){
+    fin->sig = l1;
+    l1 = l1->sig;
+    fin = fin->sig;
+  }
+  while( l2 != 0 ){
+    fin->sig = l2;
+    l2 = l2->sig;
+    fin = fin->sig;
+  }
 }
