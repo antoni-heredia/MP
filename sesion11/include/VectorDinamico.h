@@ -35,12 +35,12 @@ const TipoBase NULO = 0;
 ///////////////////////////////////////////////////////////////////////////////
 
 //Clase Vector dinamico
-class VectorDinamico_Asignacion{
+class VectorDinamico{
 
 //Datos privados de la clase
 private:
 
-  //Puntero que apunta al primer elemento del VectorDinamico_Asignacion
+  //Puntero que apunta al primer elemento del VectorDinamico
   TipoBase * vector;
 
   //Tamaño actual del vector dinamico
@@ -71,7 +71,7 @@ public:
     Se crea un vector dinamico con un tamaño inicial indicado por el argumento,
   */
 
-  VectorDinamico_Asignacion(const int casillas = TAM_INICIAL);
+  VectorDinamico(const int casillas = TAM_INICIAL);
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -80,11 +80,11 @@ public:
   /*
     Contructor de copia
     Se crea un vector dinamico con un tamaño inicial indicado por el tamaño del
-    VectorDinamico_Asignacion pasado en el argumentos
+    VectorDinamico pasado en el argumentos
     Tambien se inicializa el vector con un valor inicial igual a los valores
-    del VectorDinamico_Asignacion pasado por el argumento
+    del VectorDinamico pasado por el argumento
   */
-  VectorDinamico_Asignacion(const VectorDinamico_Asignacion & otro);
+  VectorDinamico(const VectorDinamico & otro);
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -93,37 +93,17 @@ public:
   /*
     Destructor
     Se encargara de liberar la memoria ocupada por el
-    VectorDinamico_Asignacion en el heap
+    VectorDinamico en el heap
   */
-  ~VectorDinamico_Asignacion(void);
+  ~VectorDinamico(void);
 
-///////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////
-
-  // Operador de asignacion usando otro VectorDinamico_Asignacion
-  VectorDinamico_Asignacion & operator = (const VectorDinamico_Asignacion & otro);
-
-///////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////
-
-  // Operador de asignacion usando un TipoBase
-  VectorDinamico_Asignacion & operator = (const TipoBase & valor);
-
-///////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////
-
-  TipoBase & operator [] (const int indice);
-  
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
 
   /*
-    Metodo que nos devuelve si el VectorDinamico_Asignacion esta vacio.
-    Devuelve un bool que sera TRUE si el VectorDinamico_Asignacion
+    Metodo que nos devuelve si el VectorDinamico esta vacio.
+    Devuelve un bool que sera TRUE si el VectorDinamico
     esta vacio o FALSE en caso contrario
     No recibe nada.
   */
@@ -135,7 +115,7 @@ public:
 
   /*
     Metodo que devuelve el numero de casillas que tiene el
-    VectorDinamico_Asignacion
+    VectorDinamico
     Devuelve un int que indica el numero de casillas que tiene ocupadas.
     No recibe nada.
   */
@@ -147,7 +127,7 @@ public:
 
   /*
     Metodo que devuelve el numero de casillas ocupadas que tiene el
-    VectorDinamico_Asignacion
+    VectorDinamico
     Devuelve un int que indica el numero de casillas que tiene ocupadas.
     No recibe nada.
   */
@@ -158,7 +138,7 @@ public:
 ///////////////////////////////////////////////////////////////////////////////
 
   /*
-    Metodo que añade un valor al VectorDinamico_Asignacion en la ultima
+    Metodo que añade un valor al VectorDinamico en la ultima
     posicion
     No devuelve nada.
     Recibe un TipoBase que sera el que se añada al final del
@@ -171,21 +151,8 @@ public:
 ///////////////////////////////////////////////////////////////////////////////
 
   /*
-    Metodo que devuelve el valor que se encuentra en la casilla indicada
-    Devuelve un TipoBase que es el que se encuentra en la posicion indicada
-    Recibe un int que sera el que indique el numero de la casillas
-    PREC:
-      pos < tamanio
-  */
-  TipoBase Valor(int pos) const;
-
-///////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////
-
-  /*
     Metodo que devuelve el tipo de redimenion que se hace cuando se aumenta el
-    tamanio del VectorDinamico_Asignacion
+    tamanio del VectorDinamico
     Devuelve un TipoRedimension que indica el tipo de redimension actual
     No recibe nada
   */
@@ -197,7 +164,7 @@ public:
 
   /*
     Metodo que establece un nuevo tipo de redimensionar para el
-    ºVectorDinamico_Asignacion
+    ºVectorDinamico
     No devuelve nada
     Recibe el TipoRedimension nuevo que se va a establecer
   */
@@ -218,16 +185,36 @@ public:
 
 ///////////////////////////////////////////////////////////////////////////////
 
-  /*
-    El metodo inicializara el vector, tenga el tamaño que tenga con un dato
-    Recibe:
-      - dato TipoBase que sera el dato con el que se inicializara, con valor por
-        defecto null
-    No devuelve nada
-  */
-  void InicializarDato(TipoBase dato = NULO);
+  // Operador de asignacion usando otro VectorDinamico
+  VectorDinamico & operator = (const VectorDinamico & otro);
 
 ///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+
+  // Operador de asignacion usando un TipoBase
+  VectorDinamico & operator = (const TipoBase & valor);
+
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+
+  TipoBase & operator [] (const int indice);
+  
+///////////////////////////////////////////////////////////////////////////////
+
+// Operadores relacionales
+bool operator == (const VectorDinamico & otro);
+
+bool operator != (const VectorDinamico & otro);
+
+bool operator > (const VectorDinamico & otro);
+
+bool operator <= (const VectorDinamico & otro);
+
+bool operator < (const VectorDinamico & otro);
+
+bool operator >= (const VectorDinamico & otro);
 
 //Metodos privados de la clase
 private:
@@ -260,9 +247,9 @@ private:
     El metodo copia todos los valores de un vector dinamico a nuestro vector
     dinamico
     No devuelve nada
-    Recibe un puntero a un VectorDinamico_Asignacion
+    Recibe un puntero a un VectorDinamico
   */
-  void CopiarDatos(const VectorDinamico_Asignacion & otro);
+  void CopiarDatos(const VectorDinamico & otro);
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -275,6 +262,19 @@ private:
     No recibe nada
   */
   void Redimensiona(void);
+
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+
+  /*
+    El metodo inicializara el vector, tenga el tamaño que tenga con un dato
+    Recibe:
+      - dato TipoBase que sera el dato con el que se inicializara, con valor por
+        defecto null
+    No devuelve nada
+  */
+  void InicializarDato(TipoBase dato = NULO);
 
 ///////////////////////////////////////////////////////////////////////////////
 

@@ -19,7 +19,7 @@ using namespace std;
 int main() {
   const int INICIAL = 6;
   cout << "Se crea un vector con tamaño inicial " << INICIAL << "." << endl;
-  VectorDinamico_Asignacion inicial(INICIAL);
+  VectorDinamico inicial(INICIAL);
 
   cout << "Se procede a leer datos: " << endl;
   cout << "Acaba cuando se introduzca -1" << endl;
@@ -37,7 +37,7 @@ int main() {
   cout << "Copiando el vector anterior en otro mediante el constructor de copia"
   << endl;
 
-  VectorDinamico_Asignacion copia = inicial;
+  VectorDinamico copia = inicial;
   cout << "Introduccion de datos para el vector copia" << endl;
   cout << "Introduzca un dato: ";
   cin >> dato;
