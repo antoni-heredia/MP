@@ -9,12 +9,12 @@
 // RELACION DE PROBLEMAS 4
 // EJERCICIO 2
 //
-// Demostración de la funcionalidad de la clase Matriz2D_1 (2)
+// Demostraciï¿½n de la funcionalidad de la clase Matriz2D_1 (2)
 //
 // Incluye: 
 //		* constructor de copia
 //		* destructor
-// 		* operador de asignación
+// 		* operador de asignaciï¿½n
 //		* sobrecarga de ()
 //
 // Fichero: Demo-Matriz2D_1_Asignacion-Acceso.cpp
@@ -58,7 +58,7 @@ int main (void)
 	/**********************************************************************/
 	// Prueba del operador de acceso () para escritura
 
-	for (int f=0; f<m2.Filas(); f++)
+	for (int f=0; f<m2.Filas (); f++)
 		m2 (f, f) = 1;
 
 	PintaMatriz (m2, "m2 diagonal a 1");
@@ -81,10 +81,10 @@ int main (void)
 
 	Matriz2D_1 m4 (5, 8); 
 
-	if (m4.EstaVacia()) cout << "Matriz m4 (5x8) esta vacia" << endl;
+	if (m4.EstaVacia(void) cout << "Matriz m4 (5x8) esta vacia" << endl;
 	else cout << "Matriz m4 (5x8) NO esta vacia" << endl;
 	cout << endl << endl;
-
+	
 	m4.Inicializar (9);
 
 	PintaMatriz (m4, "m4 (5x8) a nueves");
@@ -100,26 +100,26 @@ int main (void)
 
 	/**********************************************************************/
 	/**********************************************************************/
-	// Operador de asignación 
+	// Operador de asignaciï¿½n 
 	
-	Matriz2D_1 m6(6, 3); // Constructor de matriz 6x3
+	Matriz2D_1 m6 (6, 3); // Constructor de matriz 6x3
   
   	PintaMatriz (m6, "m5 vacia de dimension 6x3");
   	cout << endl << endl;  
   			  
-	m6 = 9; // Operador de asignación
+	m6 = 9; // Operador de asignaciï¿½n
 
   	PintaMatriz (m6, "m6 tras la asignacion m6 = 9");
   	cout << endl << endl;  
 
-	Matriz2D_1 m7; // Constructor sin argumentos (matriz vacía)
+	Matriz2D_1 m7; // Constructor sin argumentos (matriz vacï¿½a)
 
-	m7 = m6; // Operador de asignación 
+	m7 = m6; // Operador de asignaciï¿½n 
 
   	PintaMatriz (m7, "m7 tras la asignacion m7 = m6");
   	cout << endl << endl; 
 
-	m7 = m3; // Operador de asignación 
+	m7 = m3; // Operador de asignaciï¿½n 
 
   	PintaMatriz (m7, "m7 tras la asignacion m7 = m3");
   	cout << endl << endl; 

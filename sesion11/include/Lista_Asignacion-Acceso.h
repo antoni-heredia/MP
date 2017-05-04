@@ -9,12 +9,12 @@
 // RELACION DE PROBLEMAS 4
 // EJERCICIO 4
 //
-// Declaración de la clase clase Lista (2).
+// Declaraciï¿½n de la clase clase Lista (2).
 //
 // Incluye: 
 //		* constructor de copia
 //		* destructor
-//		* operador de asignación 
+//		* operador de asignaciï¿½n 
 //		* sobrecarga de [].
 //
 // Fichero: Lista_Asignacion-Acceso.h
@@ -44,7 +44,7 @@
 	private:
 		
 		TipoNodo * primero = 0; // Puntero al primer nodo 
-		int tamanio = 0;		// Número de nodos
+		int tamanio = 0;		// Nï¿½mero de nodos
 
 		// PRE: tamanio >= 0
 		
@@ -73,6 +73,7 @@
 
 		/*******************************************************************/
 		// Inicializa la lista al valor dado
+		
 		void Inicializar (int valor=0);
 
 		/*******************************************************************/
@@ -80,11 +81,11 @@
 		int  Tamanio (void) const;
 
 		/*******************************************************************/
-        // Métodos de acceso para escribir/leer en una posición dada: 
-        // NO MODIFICAN EL NÚMERO DE NODOS
+        // Mï¿½todos de acceso para escribir/leer en una posiciï¿½n dada: 
+        // NO MODIFICAN EL Nï¿½MERO DE NODOS
 
 		/*******************************************************************/
-		// Busca un alumno con el valor especificado. Devuelve la posición  
+		// Busca un alumno con el valor especificado. Devuelve la posiciï¿½n  
 		// del primer nodo coincidente, o -1 si no se encuentra.
 		/*******************************************************************/
 		int Busca (TipoBase valor) const;
@@ -100,13 +101,13 @@
 		TipoBase & operator () (const int posicion) const;  
 					
 		/*******************************************************************/
-		// Operador de asignación
+		// Operador de asignaciï¿½n
 		Lista & operator = (const Lista & otro);
 		Lista & operator = (const TipoBase valor);
 
 		/*******************************************************************/
-        // Métodos que modifican el tamaño de la lista 
-      	// MODIFICAN EL NÚMERO DE NODOS
+        // Mï¿½todos que modifican el tamaï¿½o de la lista 
+      	// MODIFICAN EL Nï¿½MERO DE NODOS
   			
 		/*******************************************************************/
 		// Aniade (al final) un nuevo elemento
@@ -119,25 +120,25 @@
     	void Elimina (const TipoBase valor) const;
 
 		/*******************************************************************/
-		// Inserta un nuevo elemento en la posición "pos_insertar"
+		// Inserta un nuevo elemento en la posiciï¿½n "pos_insertar"
 		// PRE: 1 <= pos_insertar <= tamanio+1
-		// El criterio seguido para especificar una posicion será : 
+		// El criterio seguido para especificar una posicion serï¿½ : 
 		// 1 -> primero, 2 -> segundo,...
-		// Nota: Si pos_insertar == tamanio+1, el resultado es idéntico a la 
-		// 		 ejecución del método Aniade()
+		// Nota: Si pos_insertar == tamanio+1, el resultado es idï¿½ntico a la 
+		// 		 ejecuciï¿½n del mï¿½todo Aniade()
 		void Inserta (const TipoBase valor, int pos_insertar);
 
 		/*******************************************************************/
-		// Borra el elemento de la posición "pos_borrar" 
+		// Borra el elemento de la posiciï¿½n "pos_borrar" 
 		// PRE: 1 <= pos_borrar <= tamanio
-		// El criterio seguido para especificar una posicion será : 
+		// El criterio seguido para especificar una posicion serï¿½ : 
 		// 1 -> primero, 2 -> segundo,...
 		void Borra (int pos_borrar);
 
 	private:
 		
 		/*******************************************************************/
-		// Petición / liberación de memoria
+		// Peticiï¿½n / liberaciï¿½n de memoria
 		void ReservarMemoria (int num_elementos);
 		void LiberarMemoria (void); 
 

@@ -9,12 +9,12 @@
 // RELACION DE PROBLEMAS 4
 // EJERCICIO 3
 //
-// Demostración de la funcionalidad de la clase Matriz2D_2 (2)
+// Demostraciï¿½n de la funcionalidad de la clase Matriz2D_2 (2)
 //
 // Incluye: 
 //		* constructor de copia
 //		* destructor
-// 		* operador de asignación
+// 		* operador de asignaciï¿½n
 //		* sobrecarga de ()
 //
 // Fichero: Demo-Matriz2D_2_Asignacion-Acceso.cpp
@@ -100,26 +100,26 @@ int main (void)
 
 	/**********************************************************************/
 	/**********************************************************************/
-	// Operador de asignación 
+	// Operador de asignaciï¿½n 
 
 	Matriz2D_2 m6(6, 3); // Constructor de matriz 6x3
   
   	PintaMatriz (m6, "m5 vacia de dimension 6x3");
   	cout << endl << endl;  
   			  
-	m6 = 9; // Operador de asignación
+	m6 = 9; // Operador de asignaciï¿½n
 
   	PintaMatriz (m6, "m6 tras la asignacion m6 = 9");
   	cout << endl << endl;  
 
-	Matriz2D_2 m7; // Constructor sin argumentos (matriz vacía)
+	Matriz2D_2 m7; // Constructor sin argumentos (matriz vacï¿½a)
 
-	m7 = m6; // Operador de asignación 
+	m7 = m6; // Operador de asignaciï¿½n 
 
   	PintaMatriz (m7, "m7 tras la asignacion m7 = m6");
   	cout << endl << endl; 
 
-	m7 = m3; // Operador de asignación 
+	m7 = m3; // Operador de asignaciï¿½n 
 
   	PintaMatriz (m7, "m7 tras la asignacion m7 = m3");
   	cout << endl << endl; 

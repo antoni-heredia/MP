@@ -16,14 +16,13 @@ struct Nodo {
 };
 
 typedef Nodo * PNodo; 	// Para los punteros a nodos
-typedef Nodo * Lista;	// Para la lista
 
 const int TAMANIO = 10;
 class Lista_Asignacion{
 
 //Datos privados de la clase
 private:
-  Nodo * lista;
+  PNodo lista;
   int tamanio;
 //Metodos publicos de la clase
 public:

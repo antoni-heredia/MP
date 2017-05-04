@@ -28,7 +28,7 @@ int main() {
   cout << "Introduzca un dato: ";
   cin >> dato;
   while(dato != -1){
-    inicial.AniadirValor(dato);
+    inicial.AniadirValor (dato);
     cout << "Introduzca un dato: ";
     cin >> dato;
   }

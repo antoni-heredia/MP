@@ -170,6 +170,7 @@ void Matriz2D_1_Asignacion::CopiarDatos(const Matriz2D_1_Asignacion & otra){
   }
 
 }
+
 void Matriz2D_1_Asignacion::LiberarMemoria(void){
   for(int f = 0; f < fils; f++)
     delete [] matriz[f];

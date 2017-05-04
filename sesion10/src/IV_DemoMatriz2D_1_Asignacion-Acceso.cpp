@@ -40,7 +40,8 @@ int main() {
   cout << "Mostrando datos: " << endl;
   rectangular.Mostrar();
 
-  Matriz2D_1_Asignacion copia(rectangular);
+  Matriz2D_1_Asignacion copia;
+  copia = rectangular;
   cout << "Creando matriz copia de la rectangular" << endl;
   copia.Mostrar();
   cout << "Modificando el elemento [1,1] a el valor 13" << endl;
