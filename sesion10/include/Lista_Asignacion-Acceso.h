@@ -12,17 +12,16 @@ const TipoBase NULO = 0;
 
 struct Nodo {
    TipoBase valor;
-   Nodo *sig;
+   Nodo * sig;
 };
 
-typedef Nodo * PNodo; 	// Para los punteros a nodos
 
 const int TAMANIO = 10;
 class Lista_Asignacion{
 
 //Datos privados de la clase
 private:
-  PNodo lista;
+  Nodo * lista;
   int tamanio;
 //Metodos publicos de la clase
 public:
