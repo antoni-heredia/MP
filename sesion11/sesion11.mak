@@ -41,28 +41,31 @@ $(LIB)/libLista.a : $(OBJ)/Lista.o
 	ar -rvs $(LIB)/libLista.a $(OBJ)/Lista.o
 
 #objetos del main
-$(OBJ)/IV_DemoVectorDinamico-Todo.o : $(SRC)/IV_DemoVectorDinamico-Todo.cpp
+$(OBJ)/IV_DemoVectorDinamico-Todo.o : $(SRC)/IV_DemoVectorDinamico-Todo.cpp \
+									  $(INCLUDE)/VectorDinamico.h
 	g++ -g -c -o $(OBJ)/IV_DemoVectorDinamico-Todo.o \
 	$(SRC)/IV_DemoVectorDinamico-Todo.cpp -I$(INCLUDE) -std=c++11
 
-$(OBJ)/IV_DemoMatriz2D_1-Todo.o : $(SRC)/IV_DemoMatriz2D_1-Todo.cpp
+$(OBJ)/IV_DemoMatriz2D_1-Todo.o : $(SRC)/IV_DemoMatriz2D_1-Todo.cpp \
+								  $(INCLUDE)/Matriz2D_1.h
 	g++ -g -c -o $(OBJ)/IV_DemoMatriz2D_1-Todo.o  \
 	$(SRC)/IV_DemoMatriz2D_1-Todo.cpp -I$(INCLUDE) -std=c++11
 
-$(OBJ)/IV_DemoLista-Todo.o : $(SRC)/IV_DemoLista-Todo.cpp
+$(OBJ)/IV_DemoLista-Todo.o : $(SRC)/IV_DemoLista-Todo.cpp \
+							 $(INCLUDE)/Lista.h
 	g++ -g -c -o $(OBJ)/IV_DemoLista-Todo.o $(SRC)/IV_DemoLista-Todo.cpp \
 	-I$(INCLUDE) -std=c++11
 
 #objetos
-$(OBJ)/VectorDinamico.o : $(SRC)/VectorDinamico.cpp
+$(OBJ)/VectorDinamico.o : $(SRC)/VectorDinamico.cpp $(INCLUDE)/VectorDinamico.h
 	g++ -g -c -o $(OBJ)/VectorDinamico.o $(SRC)/VectorDinamico.cpp \
 	 -I$(INCLUDE) -std=c++11
 
-$(OBJ)/Matriz2D_1.o : $(SRC)/Matriz2D_1.cpp
+$(OBJ)/Matriz2D_1.o : $(SRC)/Matriz2D_1.cpp $(INCLUDE)/Matriz2D_1.h
 	g++ -g -c -o $(OBJ)/Matriz2D_1.o $(SRC)/Matriz2D_1.cpp \
 	 -I$(INCLUDE) -std=c++11
 
-$(OBJ)/Lista.o : $(SRC)/Lista.cpp
+$(OBJ)/Lista.o : $(SRC)/Lista.cpp $(INCLUDE)/Lista.h
 	g++ -g -c -o $(OBJ)/Lista.o $(SRC)/Lista.cpp -I$(INCLUDE) -std=c++11
 #opciones de limpieza
 cleanlib :

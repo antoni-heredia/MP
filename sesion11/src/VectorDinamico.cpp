@@ -218,9 +218,9 @@ bool VectorDinamico :: operator == (const VectorDinamico & otro){
  
   bool iguales = (num_ocupadas == otro.num_ocupadas);
   if (iguales) {
-    
+
     int n=0;
-    while (iguales)
+    while (iguales && n != num_ocupadas)
       if (vector[n] == otro.vector[n]) // Seguir
         n++;
       else {

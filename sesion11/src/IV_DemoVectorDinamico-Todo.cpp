@@ -35,22 +35,46 @@ int main() {
   inicial.ImprimeVector("El contenido del vector es: ");
 
   cout << "Copiando el vector anterior en otro mediante el constructor de copia"
-  << endl;
+  << endl << endl;
 
   VectorDinamico copia = inicial;
+
+  if(inicial == copia)
+    cout << "El vector inicial y el de copia son iguales." << endl;
+  else
+    cout << "El vector inicial y el de copia son diferentes." << endl;
+  cout << "--------------------------------------------------------------------"
+       << endl << endl;
+  
   cout << "Introduccion de datos para el vector copia" << endl;
   cout << "Introduzca un dato: ";
   cin >> dato;
+  
   while(dato != -1){
     copia.AniadirValor(dato);
     cout << "Introduzca un dato: ";
     cin >> dato;
   }
+
+  if(inicial > copia)
+    cout << "El vector inicial es mas grande que el de copia." << endl;
+  else
+    cout << "El vector inicial es mas pequeño que el de copia." << endl;
+  cout << "--------------------------------------------------------------------"
+      << endl << endl;
+  
+  cout << "Se le añade el valor 13 al vector inicial" << endl;
+  inicial.AniadirValor(13);
+
+  if(inicial > copia)
+    cout << "El vector inicial es mas grande que el de copia." << endl;
+  else
+    cout << "El vector inicial es mas pequeño que el de copia." << endl;
+  cout << "--------------------------------------------------------------------"
+      << endl << endl;
+
   inicial.ImprimeVector("El contenido del vector inicial es: ");
   copia.ImprimeVector("El contenido del vector copia es: ");
 
-  copia = 12.2;
-  copia[0] = 13;
-  copia.ImprimeVector("El contenido del vector copia inicializado a 12.2 es: ");
   return (0);
 }
