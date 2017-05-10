@@ -120,6 +120,20 @@ bool Matriz2D_1::EstaVacia(void){
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
+int Matriz2D_1 :: Filas(void) const {
+  return fils;
+}
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+
+int Matriz2D_1 :: Columnas(void) const {
+  return cols;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
 
 // Operador de asignacion
 Matriz2D_1 & Matriz2D_1 :: operator = (const Matriz2D_1 & otro){
@@ -410,6 +424,26 @@ void Matriz2D_1::LiberarMemoria(void){
 ///////////////////////////////////////////////////////////////////////////////
 //                            Otras funciones                                //
 ///////////////////////////////////////////////////////////////////////////////
+
+// Muestra el contenido de una matriz, precedido del mensaje "msg"
+void PintaMatriz (const Matriz2D_1 m, const char * const msg)
+{
+	cout << endl; 
+	cout << "--------------------------------------------------" << endl;
+	cout << msg << endl;
+	
+	for (int f=0; f<m.Filas(); f++) {
+		
+		for (int c=0; c<m.Columnas(); c++){
+      TipoBase i = (f,c);
+			cout << i << " ";	
+      
+    }
+		cout << endl;
+	}
+	cout << "--------------------------------------------------" << endl;  
+	cout << endl;
+}
 
 // Devuelve un poliniomio constante
 Matriz2D_1 MatrizConstante (const TipoBase valor, int fils, int cols)

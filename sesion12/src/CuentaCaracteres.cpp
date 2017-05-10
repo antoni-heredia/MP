@@ -6,27 +6,24 @@
 // (C) Antonio Jesús Heredia Castillo
 // 1º - Grupo B - Subgrupo B2
 //
-// PRÁCTICA 9
+// PRÁCTICA 12
 //
 /*
  */
 /*********************************************************************/
 
 #include <iostream>
-#include "Lista.h"
-
 using namespace std;
-int main() {
-
-  cout << "Creando una lista con 4 nodos inicializados a 1..." << endl;
-  Lista lista(4,1);
-  Lista copia = lista;
-  lista += 4;
-  lista += 2;
-  lista += 4;
-  lista.Muestra();
-  lista -= 4;
-  lista.Muestra();
-  
-  return (0);
+int main (){
+    char c;
+    int cant = 0;
+    cin.get(c); // Nueva lectura
+    while (!cin.eof()) {
+        cant++;
+        cin.get(c); // Nueva lectura
+    }
+    
+    cout << endl << "La cantidad de caracteres leidos actualmente es de: " << cant
+    << endl;
+    return (0);
 }

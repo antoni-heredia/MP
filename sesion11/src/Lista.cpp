@@ -165,9 +165,71 @@ void Lista::Insertar(TipoBase valor, int pos){
     -pos un int que indica el nodo que se quiere borrar
   No recibe nada
 */
-void Borrar (int pos){
+void Lista :: Borrar (int pos_borrar){
 
+  Nodo * ant = lista;
+	Nodo * pos = lista;
+
+	// Colocar "ant" y "act" 
+	for (int i=1; i<pos_borrar; i++) { 
+		ant = pos; 
+		pos = pos->sig;
+	}
+
+	// "pos" apunta al nodo que se va a borrar
+	// "ant" apunta al nodo anterior
+
+	if (pos_borrar==1)   // Saltar el lista 
+		lista = lista->sig;
+	else 
+		ant->sig = pos->sig;
+		// Enlazar el anterior con el siguiente 
+
+	delete pos; // Borrar nodo
+	
+	tamanio--;  // Actualizar tamanio
 }
+
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Borra el primer nodo que contiene el valor "valor"
+  void Lista :: EliminarValor (TipoBase valor)
+  {
+    int pos = Buscar (valor);
+
+    // Si pos > 0 se encontr� el alumno buscado: eliminarlo
+    if (pos > 0) Borrar (pos);
+  }
+
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+
+int Lista :: Buscar (TipoBase valor) const
+{
+    Nodo * p = lista;
+
+    bool sigo = true;
+    bool encontrado = false;
+
+	int pos = 0;
+    	
+    while ((p!=0) && sigo) {
+    	
+		pos++; // Actualizar posici�n
+
+        if (p->valor == valor) {
+            sigo = false;
+            encontrado = true;
+        }
+        else 
+            p = p->sig;
+	}
+	
+	return (encontrado ? (pos) : -1); 
+}	
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -335,6 +397,27 @@ TipoBase & Lista :: operator [] (const int indice){
 
   return (aux->valor);
 
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Operador +=
+Lista & Lista :: operator += (const TipoBase & otro) {
+  AniadirValor(otro);
+  return (*this);
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+
+// Operador -=
+Lista & Lista :: operator -= (const TipoBase & otro)
+{
+  EliminarValor(otro);
+  return (*this);
 }
 
 ///////////////////////////////////////////////////////////////////////////////

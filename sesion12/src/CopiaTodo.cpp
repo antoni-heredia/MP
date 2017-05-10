@@ -6,27 +6,20 @@
 // (C) Antonio Jesús Heredia Castillo
 // 1º - Grupo B - Subgrupo B2
 //
-// PRÁCTICA 9
+// PRÁCTICA 12
 //
 /*
  */
 /*********************************************************************/
 
 #include <iostream>
-#include "Lista.h"
-
 using namespace std;
-int main() {
-
-  cout << "Creando una lista con 4 nodos inicializados a 1..." << endl;
-  Lista lista(4,1);
-  Lista copia = lista;
-  lista += 4;
-  lista += 2;
-  lista += 4;
-  lista.Muestra();
-  lista -= 4;
-  lista.Muestra();
-  
-  return (0);
+int main (){
+    char c;
+    c = cin.get(); // Lectura adelantada
+    while (!cin.eof()) {
+        cout.put (c);
+        c = cin.get(); // Nueva lectura
+    }
+    return (0);
 }
