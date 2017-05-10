@@ -17,10 +17,10 @@ using namespace std;
 int main (){
     char c;
     int cant = 0;
-    cin.get(c); // Nueva lectura
+    cin >> c; // Nueva lectura
     while (!cin.eof()) {
         cant++;
-        cin.get(c); // Nueva lectura
+        cin >> c; // Nueva lectura
     }
     
     cout << endl << "La cantidad de caracteres leidos actualmente es de: " << cant

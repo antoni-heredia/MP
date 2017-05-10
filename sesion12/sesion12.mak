@@ -9,7 +9,8 @@ LIB=$(HOME)/lib
 SRC=$(HOME)/src
 
 
-all : $(BIN)/CopiaTodo $(BIN)/CopiaExceptoVocales $(BIN)/CuentaCaracteres 
+all : $(BIN)/CopiaTodo $(BIN)/CopiaExceptoVocales $(BIN)/CuentaCaracteres \
+      $(BIN)/CuentaLineasNoVacias  $(BIN)/MuestraLineasNoVacias 
 
 #ejecutables
 $(BIN)/CopiaTodo : $(OBJ)/CopiaTodo.o 
@@ -20,7 +21,15 @@ $(BIN)/CopiaExceptoVocales : $(OBJ)/CopiaExceptoVocales.o
 
 $(BIN)/CuentaCaracteres : $(OBJ)/CuentaCaracteres.o 
 	g++ -g -o $(BIN)/CuentaCaracteres $(OBJ)/CuentaCaracteres.o -std=c++11
+       
+$(BIN)/CuentaLineasNoVacias : $(OBJ)/CuentaLineasNoVacias.o 
+	g++ -g -o $(BIN)/CuentaLineasNoVacias $(OBJ)/CuentaLineasNoVacias.o \
+	-std=c++11
 
+$(BIN)/MuestraLineasNoVacias : $(OBJ)/MuestraLineasNoVacias.o 
+	g++ -g -o $(BIN)/MuestraLineasNoVacias $(OBJ)/MuestraLineasNoVacias.o \
+	-std=c++11
+	   
 #objetos del main
 $(OBJ)/CopiaTodo.o : $(SRC)/CopiaTodo.cpp
 	g++ -g -c -o $(OBJ)/CopiaTodo.o $(SRC)/CopiaTodo.cpp -std=c++11
@@ -31,8 +40,16 @@ $(OBJ)/CopiaExceptoVocales.o : $(SRC)/CopiaExceptoVocales.cpp
 
 $(OBJ)/CuentaCaracteres.o : $(SRC)/CuentaCaracteres.cpp
 	g++ -g -c -o $(OBJ)/CuentaCaracteres.o $(SRC)/CuentaCaracteres.cpp \
-    -std=c++11
+	-std=c++11
 
+$(OBJ)/CuentaLineasNoVacias.o : $(SRC)/CuentaLineasNoVacias.cpp
+	g++ -g -c -o $(OBJ)/CuentaLineasNoVacias.o $(SRC)/CuentaLineasNoVacias.cpp \
+	-std=c++11
+
+$(OBJ)/MuestraLineasNoVacias.o : $(SRC)/MuestraLineasNoVacias.cpp
+	g++ -g -c -o $(OBJ)/MuestraLineasNoVacias.o $(SRC)/MuestraLineasNoVacias.cpp \
+	-std=c++11
+    
 cleanlib :
 	@echo Borrando librerias
 	@-rm $(LIB)/*.a

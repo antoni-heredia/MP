@@ -20,12 +20,16 @@ int main (){
     int cant_lineas = 0;
     cin.get(c); // Nueva lectura
     while (!cin.eof()) {
-        if(c == '\n')
+
+        if(c == '\n' && !nueva_linea){
+            cout.put('\n');
             nueva_linea = true;
-        else if(c != '\n' && nueva_linea){
+        }else if(c != '\n' && nueva_linea){
             cant_lineas++;
             nueva_linea = false;
         }
+        if(!nueva_linea)
+            cout.put(c);
         cin.get(c); // Nueva lectura
     }
     
