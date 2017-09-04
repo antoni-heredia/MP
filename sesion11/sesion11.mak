@@ -11,7 +11,7 @@ SRC=$(HOME)/src
 
 all : $(BIN)/IV_DemoVectorDinamico-Todo \
 			$(BIN)/IV_DemoMatriz2D_1-Todo \
-			$(BIN)/IV_DemoLista-Todo
+			$(BIN)/IV_DemoLista-Todo 
 
 #ejecutables
 $(BIN)/IV_DemoVectorDinamico-Todo : $(OBJ)/IV_DemoVectorDinamico-Todo.o \
@@ -68,6 +68,7 @@ $(OBJ)/Matriz2D_1.o : $(SRC)/Matriz2D_1.cpp $(INCLUDE)/Matriz2D_1.h
 $(OBJ)/Lista.o : $(SRC)/Lista.cpp $(INCLUDE)/Lista.h
 	g++ -g -c -o $(OBJ)/Lista.o $(SRC)/Lista.cpp -I$(INCLUDE) -std=c++11
 #opciones de limpieza
+
 cleanlib :
 	@echo Borrando librerias
 	@-rm $(LIB)/*.a
