@@ -17,8 +17,7 @@
 
 using namespace std;
 int main (){
-    char c;
-    c = cin.get(); // Lectura adelantada
+    char c = cin.get(); // Lectura adelantada
     while (!cin.eof()) {
 
         if(!isblank(c) && c != '\n')
